@@ -129,7 +129,7 @@ public class ModifiedUtf8Charset extends Charset {
         // The average-characters-per-byte is actually something less than one.
         // However, a value of 1.0 will allow the decoder to allocate a
         // precisely sized character buffer in the common case of an encoding
-        // that encode only 7-bit (non-zero) character values.
+        // that encode only 7-bit (non-null) character values.
         Decoder(final ModifiedUtf8Charset charset) {
             super(charset, 1.0F, 1.0F);
         }
@@ -161,8 +161,8 @@ public class ModifiedUtf8Charset extends Charset {
                         case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7: {
                             // first octet 0xxxxxxx
                             // 000000000aaaaaaa as 0aaaaaaa
-                            // final char ch = (char)(a);
-                            // target.put(ch);
+                         // final char ch = (char)(a);
+                         // target.put(ch);
                             target.put((char)(a));
                             sourcePosition += 1;
                             break;
@@ -174,8 +174,8 @@ public class ModifiedUtf8Charset extends Charset {
                             if ((b & 0xC0) != 0x80) {
                                 return CoderResult.malformedForLength(2);
                             }
-                            // final char ch = (char)(((a & 0x1F) << 6) | (b & 0x3F));
-                            // target.put(ch);
+                         // final char ch = (char)(((a & 0x1F) << 6) | (b & 0x3F));
+                         // target.put(ch);
                             target.put((char)(((a & 0x1F) << 6) | (b & 0x3F)));
                             sourcePosition += 2;
                             break;
@@ -191,8 +191,8 @@ public class ModifiedUtf8Charset extends Charset {
                             if ((c & 0xC0) != 0x80) {
                                 return CoderResult.malformedForLength(3);
                             }
-                            // final char ch = (char)(((a & 0x0F) << 12) | ((b & 0x3F) << 6) | (c & 0x3F));
-                            // target.put(ch);
+                         // final char ch = (char)(((a & 0x0F) << 12) | ((b & 0x3F) << 6) | (c & 0x3F));
+                         // target.put(ch);
                             target.put((char)(((a & 0x0F) << 12) | ((b & 0x3F) << 6) | (c & 0x3F)));
                             sourcePosition += 3;
                             break;
