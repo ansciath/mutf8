@@ -23,7 +23,7 @@ import java.nio.charset.StandardCharsets;
  * <ul>
  * <li><a href="https://docs.oracle.com/javase/10/docs/api/java/io/DataInput.html#modified-utf-8">
  *         <i>Java Platform,
- *         Standard Edition & Java Development Kit Version 10 API Specification</i>,
+ *         Standard Edition &amp; Java Development Kit Version 10 API Specification</i>,
  *         interface {@code java.io.DataInput},
  *         Modified UTF-8
  * <li><a href="https://docs.oracle.com/javase/specs/jvms/se10/html/jvms-4.html#jvms-4.4.7">
